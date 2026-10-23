@@ -1,0 +1,319 @@
+{
+  "categories": [
+    {
+      "id": "outerwear",
+      "name": "Верхняя одежда"
+    },
+    {
+      "id": "tops",
+      "name": "Футболки и поло"
+    },
+    {
+      "id": "trousers",
+      "name": "Брюки"
+    },
+    {
+      "id": "shoes",
+      "name": "Обувь"
+    }
+  ],
+  "products": [
+    {
+      "id": "ow1",
+      "name": "Пальто Heritage",
+      "cat": "outerwear",
+      "price": 1850000,
+      "oldPrice": 0,
+      "type": "Пальто",
+      "color": "#777665",
+      "colorName": "Оливково-серый",
+      "shape": "coat",
+      "tag": "Хит",
+      "desc": "Прямое пальто из плотной шерстяной смеси. Мягкая линия плеча, скрытая застёжка и подкладка, которая приятно ощущается на коже.",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "images": [],
+      "inStock": true
+    },
+    {
+      "id": "ow2",
+      "name": "Пиджак Sartorial",
+      "cat": "outerwear",
+      "price": 1450000,
+      "oldPrice": 0,
+      "type": "Пиджак",
+      "color": "#b5a38c",
+      "colorName": "Песочный",
+      "shape": "jacket",
+      "tag": "Новинка",
+      "desc": "Полуприталенный пиджак на каждый день. Лёгкая структура, накладные карманы и ткань, которая не мнётся за рабочий день.",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "images": [],
+      "inStock": true
+    },
+    {
+      "id": "ow3",
+      "name": "Куртка Weekend",
+      "cat": "outerwear",
+      "price": 1190000,
+      "oldPrice": 0,
+      "type": "Куртка",
+      "color": "#4c5044",
+      "colorName": "Тёмный хаки",
+      "shape": "jacket",
+      "tag": "",
+      "desc": "Короткая куртка для прохладных дней. Лёгкий утеплитель, воротник-стойка и карманы на молнии.",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "images": [],
+      "inStock": true
+    },
+    {
+      "id": "ow4",
+      "name": "Худи Quiet",
+      "cat": "outerwear",
+      "price": 760000,
+      "oldPrice": 0,
+      "type": "Худи",
+      "color": "#2f3a3a",
+      "colorName": "Тёмная ель",
+      "shape": "hoodie",
+      "tag": "",
+      "desc": "Плотное худи из футера с начёсом. Свободный крой, глубокий капюшон и манжеты, которые держат форму.",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "images": [],
+      "inStock": true
+    },
+    {
+      "id": "t1",
+      "name": "Футболка Essential",
+      "cat": "tops",
+      "price": 290000,
+      "oldPrice": 0,
+      "type": "Футболка",
+      "color": "#e0dbd0",
+      "colorName": "Молочный",
+      "shape": "tee",
+      "tag": "База",
+      "desc": "Плотный хлопок 220 г/м². Ровный воротник, который не растягивается после стирки.",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "images": [],
+      "inStock": true
+    },
+    {
+      "id": "t2",
+      "name": "Футболка Riviera",
+      "cat": "tops",
+      "price": 320000,
+      "oldPrice": 0,
+      "type": "Футболка",
+      "color": "#393b35",
+      "colorName": "Угольный",
+      "shape": "tee",
+      "tag": "",
+      "desc": "Мягкий мерсеризованный хлопок с лёгким блеском. Хорошо сидит под пиджаком.",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "images": [],
+      "inStock": true
+    },
+    {
+      "id": "t3",
+      "name": "Поло Heritage",
+      "cat": "tops",
+      "price": 390000,
+      "oldPrice": 0,
+      "type": "Поло",
+      "color": "#7d8875",
+      "colorName": "Шалфейный",
+      "shape": "polo",
+      "tag": "Новинка",
+      "desc": "Классическое поло из пике. Планка на три пуговицы и воротник, который держит форму.",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "images": [],
+      "inStock": true
+    },
+    {
+      "id": "t4",
+      "name": "Футболка Stone",
+      "cat": "tops",
+      "price": 310000,
+      "oldPrice": 0,
+      "type": "Футболка",
+      "color": "#b7a48d",
+      "colorName": "Каменный",
+      "shape": "tee",
+      "tag": "",
+      "desc": "Спокойный каменный оттенок, который сочетается практически со всем.",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "images": [],
+      "inStock": true
+    },
+    {
+      "id": "p1",
+      "name": "Брюки Tailored",
+      "cat": "trousers",
+      "price": 690000,
+      "oldPrice": 0,
+      "type": "Брюки",
+      "color": "#4c4d43",
+      "colorName": "Графит",
+      "shape": "pants",
+      "tag": "Хит",
+      "desc": "Классические брюки со стрелками и средней посадкой. Шерстяная смесь, не требует частой глажки.",
+      "sizes": [
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "images": [],
+      "inStock": true
+    },
+    {
+      "id": "p2",
+      "name": "Брюки Linen Blend",
+      "cat": "trousers",
+      "price": 720000,
+      "oldPrice": 0,
+      "type": "Брюки",
+      "color": "#b7a68f",
+      "colorName": "Песочный",
+      "shape": "pants",
+      "tag": "",
+      "desc": "Лён с хлопком: дышат в жару и не липнут к телу. Свободная посадка и мягкий пояс.",
+      "sizes": [
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "images": [],
+      "inStock": true
+    },
+    {
+      "id": "p3",
+      "name": "Чиносы Classic",
+      "cat": "trousers",
+      "price": 590000,
+      "oldPrice": 0,
+      "type": "Чиносы",
+      "color": "#777c66",
+      "colorName": "Оливковый",
+      "shape": "pants",
+      "tag": "",
+      "desc": "Чиносы прямого кроя из плотного твила. Подходят и к футболке, и к рубашке.",
+      "sizes": [
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "images": [],
+      "inStock": true
+    },
+    {
+      "id": "s1",
+      "name": "Лоферы Milano",
+      "cat": "shoes",
+      "price": 990000,
+      "oldPrice": 0,
+      "type": "Лоферы",
+      "color": "#49382b",
+      "colorName": "Тёмно-коричневый",
+      "shape": "shoe",
+      "tag": "Хит",
+      "desc": "Лоферы из мягкой телячьей кожи. Гибкая подошва, ручная прошивка и стелька, которая не скользит.",
+      "sizes": [
+        "40",
+        "41",
+        "42",
+        "43",
+        "44"
+      ],
+      "images": [],
+      "inStock": true
+    },
+    {
+      "id": "s2",
+      "name": "Кеды Minimal",
+      "cat": "shoes",
+      "price": 650000,
+      "oldPrice": 0,
+      "type": "Кеды",
+      "color": "#dedbd2",
+      "colorName": "Молочный",
+      "shape": "sneaker",
+      "tag": "",
+      "desc": "Минималистичные кеды из гладкой кожи. Лёгкая подошва, без лишних логотипов.",
+      "sizes": [
+        "40",
+        "41",
+        "42",
+        "43",
+        "44"
+      ],
+      "images": [],
+      "inStock": true
+    },
+    {
+      "id": "s3",
+      "name": "Дерби Oxford",
+      "cat": "shoes",
+      "price": 1150000,
+      "oldPrice": 0,
+      "type": "Дерби",
+      "color": "#282923",
+      "colorName": "Чёрный",
+      "shape": "shoe",
+      "tag": "",
+      "desc": "Дерби из натуральной кожи на кожаной подошве. Классика, которая подходит и к костюму, и к джинсам.",
+      "sizes": [
+        "40",
+        "41",
+        "42",
+        "43",
+        "44"
+      ],
+      "images": [],
+      "inStock": true
+    }
+  ]
+}

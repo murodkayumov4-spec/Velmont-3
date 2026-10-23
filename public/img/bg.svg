@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1b2a2c"/><stop offset=".55" stop-color="#121a1c"/><stop offset="1" stop-color="#0a0f11"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".72" cy=".18" r=".7">
+      <stop offset="0" stop-color="#f1dfbd" stop-opacity=".55"/><stop offset=".45" stop-color="#c9a66b" stop-opacity=".12"/><stop offset="1" stop-color="#c9a66b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#241d17"/><stop offset="1" stop-color="#0b0908"/></linearGradient>
+    <linearGradient id="fold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#000" stop-opacity=".38"/><stop offset=".35" stop-color="#fff" stop-opacity=".08"/><stop offset=".65" stop-color="#000" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity=".05"/>
+    </linearGradient>
+    <filter id="soft" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="2.4"/></filter>
+    <filter id="far" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="7"/></filter>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="4"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0"/></filter>
+    <g id="coat">
+      <path d="M0 0 L-20 14 Q-70 28 -112 62 L-132 130 L-160 400 L-120 410 L-112 190 L-108 520 L108 520 L112 190 L120 410 L160 400 L132 130 L112 62 Q70 28 20 14 Z"/>
+      <path fill="url(#fold)" d="M0 0 L-20 14 Q-70 28 -112 62 L-132 130 L-160 400 L-120 410 L-112 190 L-108 520 L108 520 L112 190 L120 410 L160 400 L132 130 L112 62 Q70 28 20 14 Z"/>
+      <path d="M-20 14 L0 150 L20 14 M0 150 V520" fill="none" stroke="#000" stroke-opacity=".35" stroke-width="3"/>
+    </g>
+    <g id="shirt">
+      <path d="M-26 0 Q0 22 26 0 L110 34 L170 150 L126 176 L102 128 L96 380 L-96 380 L-102 128 L-126 176 L-170 150 L-110 34 Z"/>
+      <path fill="url(#fold)" d="M-26 0 Q0 22 26 0 L110 34 L170 150 L126 176 L102 128 L96 380 L-96 380 L-102 128 L-126 176 L-170 150 L-110 34 Z"/>
+    </g>
+    <g id="trs">
+      <path d="M-84 0 H84 L96 420 H12 L0 150 L-12 420 H-96 Z"/>
+      <path fill="url(#fold)" d="M-84 0 H84 L96 420 H12 L0 150 L-12 420 H-96 Z"/>
+    </g>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#wall)"/>
+  <rect width="1600" height="1000" fill="url(#glow)"/>
+  <g stroke="#fff" stroke-opacity=".035" stroke-width="2"><path d="M0 120H1600M0 300H1600M0 480H1600M0 660H1600"/></g>
+
+  <!-- дальний ряд, размытый -->
+  <g filter="url(#far)" opacity=".55">
+    <path d="M60 250H1540" stroke="#7a6a52" stroke-width="6"/>
+    <g fill="#3f4b44" transform="translate(190 262) scale(.72)"><use href="#coat"/></g>
+    <g fill="#6a5d49" transform="translate(470 262) scale(.72)"><use href="#shirt"/></g>
+    <g fill="#2b3234" transform="translate(760 262) scale(.72)"><use href="#coat"/></g>
+    <g fill="#8c7d63" transform="translate(1050 262) scale(.72)"><use href="#trs"/></g>
+    <g fill="#4a5446" transform="translate(1320 262) scale(.72)"><use href="#coat"/></g>
+  </g>
+
+  <!-- ближний ряд -->
+  <g filter="url(#soft)">
+    <path d="M-20 205H1620" stroke="#b79a68" stroke-width="7"/>
+    <g stroke="#b79a68" stroke-width="5" fill="none" stroke-linecap="round">
+      <path d="M330 205 V186 q0 -16 14 -16 M330 205 L330 218"/>
+    </g>
+    <g fill="#8b8a72" transform="translate(300 222)"><use href="#coat"/></g>
+    <g fill="#d3c7ad" transform="translate(690 222)"><use href="#shirt"/></g>
+    <g fill="#33403b" transform="translate(1030 222)"><use href="#coat"/></g>
+    <g fill="#a98f6d" transform="translate(1390 222)"><use href="#trs"/></g>
+    <g fill="#242b2d" transform="translate(70 222)"><use href="#shirt"/></g>
+  </g>
+
+  <!-- пол и свет -->
+  <rect y="820" width="1600" height="180" fill="url(#floor)"/>
+  <ellipse cx="800" cy="835" rx="900" ry="42" fill="#c9a66b" opacity=".06"/>
+  <rect width="1600" height="1000" filter="url(#grain)" opacity=".16"/>
+</svg>

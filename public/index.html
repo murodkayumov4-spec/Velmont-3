@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d1416">
+<title>VELMONT — мужская одежда</title>
+<meta name="description" content="VELMONT — мужская одежда: верхняя одежда, футболки, брюки и обувь. Заказ в пару касаний.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d1416'/%3E%3Cpath d='M14 18l18 30 18-30' fill='none' stroke='%23d8c3a0' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/fx.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <linearGradient id="gShade" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#fff" stop-opacity=".3"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".38"/>
+  </linearGradient>
+</defs></svg>
+
+<div class="intro" aria-hidden="true"><div class="il"><div class="il-mono"><i></i></div><div class="il-word"></div><div class="il-sub"></div><div class="il-tag"></div></div></div>
+<div class="bg" aria-hidden="true"></div>
+<div class="bg-shade" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="glow" id="glow" aria-hidden="true"></div>
+
+<div class="announce" id="announce" data-s="announcement"></div>
+
+<header class="header" id="header">
+  <a class="logo" href="#home" aria-label="VELMONT — на главную"><span class="logo-mark" aria-hidden="true"></span>VELMONT</a>
+  <nav class="nav" id="nav" aria-label="Главное меню">
+    <a href="#home" data-spy="home">Главная</a>
+    <div class="nav-drop">
+      <a href="#catalog" data-spy="catalog" aria-haspopup="true">Каталог <i class="caret" aria-hidden="true"></i></a>
+      <div class="drop-panel" id="dropPanel"></div>
+    </div>
+    <a href="#about" data-spy="about">О бренде</a>
+    <a href="#contact" data-spy="contact">Контакты</a>
+  </nav>
+  <div class="header-actions">
+    <button class="cart-btn" id="openTrack" aria-label="Мои заказы" hidden>
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4-9-4Z"/><path d="M3 7v10l9 4 9-4V7M12 11v10"/></svg>
+    </button>
+    <button class="cart-btn" id="openCart" aria-label="Открыть корзину">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a1.5 1.5 0 0 1-1.5 1.3H7.7a1.5 1.5 0 0 1-1.5-1.3L5 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+      <span class="badge" id="cartCount">0</span>
+    </button>
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="menu"><i></i><i></i></button>
+  </div>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <nav class="menu-inner" id="menuInner" aria-label="Мобильное меню"></nav>
+</div>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-media" aria-hidden="true"><video id="heroVideo" muted loop playsinline autoplay preload="auto" poster="img/hero-poster.jpg"><source src="img/hero.webm" type="video/webm"><source src="img/hero.mp4" type="video/mp4"></video></div>
+    <div class="hero-copy">
+      <p class="kicker" data-s="heroEyebrow"></p>
+      <h1 data-s="heroTitle" data-title></h1>
+      <p class="lead" data-s="heroText"></p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#catalog"><span data-s="heroButton">Смотреть каталог</span></a>
+        <a class="btn btn-ghost" href="#about">О бренде</a>
+      </div>
+    </div>
+    <div class="hero-stack" id="heroStack" aria-hidden="true"></div>
+    <a class="scroll-hint" href="#catalog" aria-label="Перейти к каталогу"><span></span></a>
+  </section>
+
+  <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>Новая коллекция</span><span>Плотные ткани</span><span>Заказ за минуту</span><span>Доставка по Узбекистану</span><span>Новая коллекция</span><span>Плотные ткани</span><span>Заказ за минуту</span><span>Доставка по Узбекистану</span></div></div>
+
+  <section class="catalog" id="catalog">
+    <div class="wrap">
+      <div class="section-head">
+        <div><h2>Каталог</h2><p class="muted">Листайте ряды вправо или нажмите на вещь, чтобы открыть её на весь экран.</p></div>
+        <label class="search"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg><input id="search" type="search" placeholder="Найти вещь" autocomplete="off" aria-label="Поиск по каталогу"></label>
+      </div>
+      <div class="chips" id="chips" role="tablist" aria-label="Каталоги"></div>
+    </div>
+    <div id="rows"></div>
+    <p class="empty wrap" id="noResults" hidden>Ничего не нашли. Попробуйте другое слово или сбросьте фильтр.</p>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <h2 data-s="aboutTitle" data-title></h2>
+      <div>
+        <p class="lead" data-s="aboutText"></p>
+        <ul class="facts">
+          <li><strong>Плотные ткани</strong><span>Хлопок, шерсть, лён и кожа без лишних добавок.</span></li>
+          <li><strong>Точная посадка</strong><span>Размеры указаны на каждой вещи, выбирайте перед заказом.</span></li>
+          <li><strong>Простой заказ</strong><span>Оставьте имя и телефон, мы свяжемся и подтвердим.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap contact-box glass">
+      <div><h2>Связаться с нами</h2><p class="lead" data-s="contactText"></p></div>
+      <div class="contact-links" id="contactLinks"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <a class="logo" href="#home"><span class="logo-mark" aria-hidden="true"></span>VELMONT</a>
+  <p data-s="footerText"></p>
+  <small>© 2026 VELMONT</small>
+</footer>
+
+<!-- Карточка товара на весь экран -->
+<div class="pm" id="pm" aria-hidden="true">
+  <div class="pm-backdrop" data-close></div>
+  <article class="pm-panel glass" role="dialog" aria-modal="true" aria-labelledby="pmTitle" id="pmPanel"></article>
+</div>
+
+<!-- Корзина -->
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-hidden="true" role="dialog" aria-label="Корзина">
+  <div class="drawer-head">
+    <h2>Корзина <small id="cartN">0</small></h2>
+    <button class="icon-btn" id="closeCart" aria-label="Закрыть корзину">✕</button>
+  </div>
+  <div class="drawer-view" id="viewCart">
+    <div class="cart-list" id="cartList"></div>
+    <div class="cart-empty" id="cartEmpty">
+      <svg viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22h40l-3.6 32a4 4 0 0 1-4 3.5H19.6a4 4 0 0 1-4-3.5L12 22Z"/><path d="M23 22v-4a9 9 0 0 1 18 0v4"/></svg>
+      <h3>В корзине пока пусто</h3>
+      <p>Выберите вещь в каталоге и нажмите «В корзину».</p>
+      <button class="btn btn-ghost" id="continueShopping">В каталог</button>
+    </div>
+    <div class="drawer-foot" id="cartFoot">
+      <div class="total"><span>Итого</span><strong id="cartTotal">0 сум</strong></div>
+      <button class="btn btn-primary btn-block btn-shine" id="toCheckout"><span>Оформить заказ</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+  <form class="drawer-view" id="viewCheckout" hidden novalidate>
+    <button type="button" class="back" id="backToCart">← Назад в корзину</button>
+    <h3>Куда и кому отправить</h3>
+    <label class="field"><span>Ваше имя</span><input name="name" autocomplete="name" maxlength="80" required></label>
+    <div class="field" id="phoneBox"><span>Телефон</span>
+      <div class="inline"><input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+998 90 123 45 67" maxlength="30" required><button type="button" class="btn btn-primary small" id="tgVerify" hidden>Подтвердить через Telegram</button></div>
+      <small class="hint" id="tgHint"></small>
+    </div>
+    <div class="field" id="addrBox"><span>Адрес доставки</span>
+      <button type="button" class="map-btn" id="pickMap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span id="pickMapText">Выбрать адрес на карте</span></button>
+      <input name="address2" autocomplete="off" maxlength="120" placeholder="Подъезд, этаж, квартира, ориентир" hidden>
+    </div>
+    <label class="field"><span>Комментарий</span><textarea name="comment" rows="2" maxlength="500" placeholder="Удобное время звонка, пожелания"></textarea></label>
+    <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <p class="form-error" id="orderError" role="alert" hidden></p>
+    <div class="drawer-foot">
+      <div class="total"><span>К оплате</span><strong id="checkoutTotal">0 сум</strong></div>
+      <button class="btn btn-primary btn-block btn-order" id="sendOrder" type="submit">
+        <span class="bo-label">Отправить заказ</span>
+        <span class="bo-cart" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h3l2.4 11.2a1.6 1.6 0 0 0 1.6 1.3h8.2a1.6 1.6 0 0 0 1.6-1.2L21 8H6"/><circle cx="10" cy="20" r="1.3"/><circle cx="17" cy="20" r="1.3"/></svg></span>
+        <span class="bo-ok" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Заказ принят</span>
+        <span class="bo-bar" aria-hidden="true"></span>
+      </button>
+      <p class="fine">Менеджер свяжется с вами для подтверждения. Оплата при получении.</p>
+    </div>
+  </form>
+  <div class="drawer-view" id="viewTrack" hidden>
+    <button type="button" class="back" id="backFromTrack">← К корзине</button>
+    <h3>Мои заказы</h3>
+    <p class="fine">Статус обновляется автоматически.</p>
+    <div id="trackList"></div>
+  </div>
+  <div class="drawer-view done" id="viewDone" hidden>
+    <canvas class="confetti" id="confetti" aria-hidden="true"></canvas>
+    <svg class="check" viewBox="0 0 80 80" width="96" height="96" aria-hidden="true"><circle cx="40" cy="40" r="34"/><path d="M26 41l10 10 19-21"/></svg>
+    <h3 id="doneTitle">Поздравляем с заказом! 🎉</h3>
+    <p id="doneText">Мы получили заказ и скоро свяжемся с вами.</p>
+    <a class="btn btn-tg" id="doneTg" href="#" target="_blank" rel="noopener" hidden>Отправить заказ в Telegram</a>
+    <button class="btn btn-ghost" id="doneTrack">Следить за статусом заказа</button>
+    <button class="btn btn-primary" id="doneClose">Продолжить покупки</button>
+  </div>
+</aside>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
