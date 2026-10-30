@@ -263,7 +263,8 @@ async function onTgUpdate(u) {
     if (!m.contact.user_id || m.contact.user_id !== m.from.id) return say(chat, botText('own', s && s.lang));
     if (!s || s.exp < now) return say(chat, botText('exp', s && s.lang), { reply_markup: { remove_keyboard: true } });
     s.phone = String(m.contact.phone_number || '').replace(/\D/g, ''); s.user = m.from.username || ''; s.chat = chat;
-    return say(chat, botText('ok', s.lang), { reply_markup: { remove_keyboard: true } });
+    await say(chat, botText('ok', s.lang), { reply_markup: { remove_keyboard: true } });
+    return say(chat, '👇', { reply_markup: { inline_keyboard: [[{ text: botText('back', s.lang), url: `${SITE_URL}/?tg=${tgByChat.get(chat)}` }]] } });
   }
   const t = String(m.text || '');
   if (t.startsWith('/start')) {
