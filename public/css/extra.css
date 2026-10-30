@@ -220,3 +220,4 @@ body.menu-open main, body.menu-open .footer, body.menu-open .announce { transfor
 .hp-mini img, .hp-mini .garment { flex: 1; min-height: 0; width: 100%; object-fit: contain; border-radius: 10px; filter: drop-shadow(0 10px 14px rgba(0, 0, 0, .4)); }
 .hp-mini span { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 @media (prefers-reduced-motion: reduce) { .hp-mini { animation: none; } .hp-frame img { transform: none !important; transition: opacity .4s; } .tick .hp-bar::before { animation: none; } }
+.hp-mini { display: none; }
