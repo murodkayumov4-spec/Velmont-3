@@ -124,11 +124,29 @@ function setMenu(open) {
   menu.classList.toggle('open', open); burger.setAttribute('aria-expanded', open); menu.setAttribute('aria-hidden', !open);
   document.body.classList.toggle('lock', open); document.body.classList.toggle('menu-open', open);
   if (open) track('menu_open');
+  if (open) ensurePics();
 }
 burger.onclick = () => setMenu(!menu.classList.contains('open'));
 menu.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
 initNavPill($('#nav')); initMenuFx(menu);
 addEventListener('resize', () => { if (!mobile() && menu.classList.contains('open')) setMenu(false); });
+
+/* фото в меню: грузятся при первом открытии, меняются при наведении */
+const MENU_PICS = ['img/menu/m1.jpg', 'img/menu/m2.jpg', 'img/menu/m3.jpg', 'img/menu/m4.jpg'];
+let menuPics = [];
+function ensurePics() {
+  if (menuPics.length) return;
+  const box = $('.menu-photos');
+  box.insertAdjacentHTML('afterbegin', MENU_PICS.map((s, i) => `<img src="${s}" alt="" draggable="false" class="${i ? '' : 'on'}">`).join(''));
+  menuPics = $$('img', box);
+  menuPics.forEach((im) => im.addEventListener('error', () => im.remove()));
+}
+function showPic(a) {
+  const h = a.getAttribute('href') || '';
+  const i = Math.min(menuPics.length - 1, h === '#home' ? 0 : (h === '#about' || h === '#reviews') ? 2 : h === '#contact' ? 3 : 1);
+  menuPics.forEach((im, k) => im.classList.toggle('on', k === i));
+}
+['pointerover', 'focusin'].forEach((ev) => $('#menuInner').addEventListener(ev, (e) => { const a = e.target.closest('a'); if (a) showPic(a); }));
 
 function goCat(id) {
   if (state.cat !== 'all' || state.q) { state.cat = 'all'; state.q = ''; $('#search').value = ''; renderCatalog(); }
