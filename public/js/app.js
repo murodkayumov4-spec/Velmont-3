@@ -735,17 +735,36 @@ syncTrackBtn();
 let tt; function toast(msg) { const t = $('#toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(tt); tt = setTimeout(() => t.classList.remove('show'), 2400); }
 
 /* ---------- главный экран: плавающие карточки ---------- */
+let heroTimer = 0;
 function renderHeroCards() {
-  const feat = products.filter((p) => p.inStock !== false).slice(0, 3);
-  $('#heroStack').innerHTML = feat.map((p) => `<div class="hero-card glass">${media(p, '', true)}<span>${esc(pName(p))}</span></div>`).join('');
+  const feat = products.filter((p) => p.inStock !== false)[0];
+  $('#heroStack').innerHTML = `<div class="hero-photo"><div class="hp-frame">${MENU_PICS.map((s, i) => `<img src="${s}" alt="" draggable="false" class="${i ? '' : 'on'}" ${i ? 'loading="lazy"' : 'fetchpriority="high"'}>`).join('')}<i class="hp-bar"></i></div>`
+    + `<div class="hp-dots">${MENU_PICS.map((_, i) => `<button type="button" class="${i ? '' : 'on'}" data-hp="${i}" aria-label="${i + 1}" tabindex="-1"></button>`).join('')}</div>`
+    + (feat ? `<a class="hp-mini glass" href="#p-${esc(feat.id)}" tabindex="-1">${media(feat, '', true)}<span>${esc(pName(feat))}</span></a>` : '') + '</div>';
+  initHeroSlides();
+}
+function initHeroSlides() {
+  clearInterval(heroTimer);
+  const box = $('.hero-photo'); if (!box) return;
+  const imgs = $$('.hp-frame img', box), dots = $$('.hp-dots button', box);
+  let cur = 0;
+  const go = (n) => {
+    cur = (n + imgs.length) % imgs.length;
+    imgs.forEach((im, k) => im.classList.toggle('on', k === cur));
+    dots.forEach((d, k) => d.classList.toggle('on', k === cur));
+    box.classList.remove('tick'); void box.offsetWidth; box.classList.add('tick');
+  };
+  const start = () => { clearInterval(heroTimer); if (!reduce) heroTimer = setInterval(() => { if (!document.hidden) go(cur + 1); }, 5000); };
+  box.addEventListener('click', (e) => { const b = e.target.closest('[data-hp]'); if (b) { go(+b.dataset.hp); start(); } });
+  go(0); start();
 }
 (function hero() {
   renderHeroCards();
   if (!fine || reduce) return;
   const stack = $('#heroStack');
   $('#home').addEventListener('pointermove', (e) => {
-    const x = e.clientX / innerWidth - .5, y = e.clientY / innerHeight - .5;
-    $$('.hero-card', stack).forEach((c, i) => { const k = (i + 1) * 14; c.style.transform = `translate(${x * k}px,${y * k}px) rotate(var(--r))`; });
+    stack.style.setProperty('--hx', (e.clientX / innerWidth - .5).toFixed(3));
+    stack.style.setProperty('--hy', (e.clientY / innerHeight - .5).toFixed(3));
   });
 })();
 
