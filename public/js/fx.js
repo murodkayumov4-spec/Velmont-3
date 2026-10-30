@@ -22,6 +22,13 @@ function splitWords(el) {
   walk(el);
 }
 
+/** после смены языка заново режет заголовки на слова (анимация уже отыграна, поэтому сразу видны) */
+export function resplit() {
+  if (!document.documentElement.classList.contains('fx')) return;
+  const h1 = document.querySelector('.hero h1'); if (h1) splitWords(h1);
+  $$('.about h2').forEach(splitWords);
+}
+
 export function initFx() {
   if (reduce) return;
   document.documentElement.classList.add('fx');

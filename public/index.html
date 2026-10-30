@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
+<!--SEO-->
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0d1416">
 <title>VELMONT — мужская одежда</title>
@@ -12,6 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/fx.css">
+<link rel="stylesheet" href="css/extra.css">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
@@ -29,30 +31,39 @@
 <div class="announce" id="announce" data-s="announcement"></div>
 
 <header class="header" id="header">
-  <a class="logo" href="#home" aria-label="VELMONT — на главную"><span class="logo-mark" aria-hidden="true"></span>VELMONT</a>
-  <nav class="nav" id="nav" aria-label="Главное меню">
-    <a href="#home" data-spy="home">Главная</a>
-    <div class="nav-drop">
-      <a href="#catalog" data-spy="catalog" aria-haspopup="true">Каталог <i class="caret" aria-hidden="true"></i></a>
+  <a class="logo" href="#home" data-i18n-aria="aria_home" aria-label="VELMONT — на главную"><span class="logo-mark" aria-hidden="true"></span>VELMONT</a>
+  <nav class="nav" id="nav" data-i18n-aria="aria_main_menu" aria-label="Главное меню">
+    <i class="nav-pill" aria-hidden="true"></i>
+    <a href="#home" data-spy="home" style="--ni:0"><span class="roll"><span data-i18n="nav_home">Главная</span></span></a>
+    <div class="nav-drop" style="--ni:1">
+      <a href="#catalog" data-spy="catalog" aria-haspopup="true"><span class="roll"><span data-i18n="nav_catalog">Каталог</span></span> <i class="caret" aria-hidden="true"></i></a>
       <div class="drop-panel" id="dropPanel"></div>
     </div>
-    <a href="#about" data-spy="about">О бренде</a>
-    <a href="#contact" data-spy="contact">Контакты</a>
+    <a href="#about" data-spy="about" style="--ni:2"><span class="roll"><span data-i18n="nav_about">О бренде</span></span></a>
+    <a href="#reviews" data-spy="reviews" id="navReviews" style="--ni:3" hidden><span class="roll"><span data-i18n="nav_reviews">Отзывы</span></span></a>
+    <a href="#contact" data-spy="contact" style="--ni:4"><span class="roll"><span data-i18n="nav_contact">Контакты</span></span></a>
   </nav>
   <div class="header-actions">
-    <button class="cart-btn" id="openTrack" aria-label="Мои заказы" hidden>
+    <button class="cart-btn lang-btn" id="langBtn" data-i18n-aria="aria_lang" aria-label="Сменить язык"><span id="langLabel">UZ</span></button>
+    <button class="cart-btn" id="openFav" data-i18n-aria="aria_fav" aria-label="Избранное">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2Z"/></svg>
+      <span class="badge" id="favCount">0</span>
+    </button>
+    <button class="cart-btn" id="openTrack" data-i18n-aria="aria_orders" aria-label="Мои заказы" hidden>
       <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4-9-4Z"/><path d="M3 7v10l9 4 9-4V7M12 11v10"/></svg>
     </button>
-    <button class="cart-btn" id="openCart" aria-label="Открыть корзину">
+    <button class="cart-btn" id="openCart" data-i18n-aria="aria_cart" aria-label="Открыть корзину">
       <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a1.5 1.5 0 0 1-1.5 1.3H7.7a1.5 1.5 0 0 1-1.5-1.3L5 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
       <span class="badge" id="cartCount">0</span>
     </button>
-    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="menu"><i></i><i></i></button>
+    <button class="burger" id="burger" data-i18n-aria="aria_menu" aria-label="Меню" aria-expanded="false" aria-controls="menu"><i></i><i></i></button>
   </div>
 </header>
 
 <div class="menu" id="menu" aria-hidden="true">
-  <nav class="menu-inner" id="menuInner" aria-label="Мобильное меню"></nav>
+  <div class="menu-bg" aria-hidden="true"><i class="mc mc1"></i><i class="mc mc2"></i><i class="mc mc3"></i><i class="orb o1"></i><i class="orb o2"></i><span class="menu-mark">VELMONT</span></div>
+  <nav class="menu-inner" id="menuInner" data-i18n-aria="aria_mobile_menu" aria-label="Мобильное меню"></nav>
+  <div class="menu-foot" id="menuFoot"></div>
 </div>
 
 <main>
@@ -63,26 +74,28 @@
       <h1 data-s="heroTitle" data-title></h1>
       <p class="lead" data-s="heroText"></p>
       <div class="actions">
-        <a class="btn btn-primary" href="#catalog"><span data-s="heroButton">Смотреть каталог</span></a>
-        <a class="btn btn-ghost" href="#about">О бренде</a>
+        <a class="btn btn-primary" href="#catalog"><span data-s="heroButton" data-i18n="hero_cta">Смотреть каталог</span></a>
+        <a class="btn btn-ghost" href="#about" data-i18n="nav_about">О бренде</a>
       </div>
     </div>
     <div class="hero-stack" id="heroStack" aria-hidden="true"></div>
-    <a class="scroll-hint" href="#catalog" aria-label="Перейти к каталогу"><span></span></a>
+    <a class="scroll-hint" href="#catalog" data-i18n-aria="aria_scroll" aria-label="Перейти к каталогу"><span></span></a>
   </section>
 
-  <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>Новая коллекция</span><span>Плотные ткани</span><span>Заказ за минуту</span><span>Доставка по Узбекистану</span><span>Новая коллекция</span><span>Плотные ткани</span><span>Заказ за минуту</span><span>Доставка по Узбекистану</span></div></div>
+  <div class="ticker" aria-hidden="true"><div class="ticker-track"><span data-i18n="tk1">Новая коллекция</span><span data-i18n="tk2">Плотные ткани</span><span data-i18n="tk3">Заказ за минуту</span><span data-i18n="tk4">Доставка по Узбекистану</span><span data-i18n="tk1">Новая коллекция</span><span data-i18n="tk2">Плотные ткани</span><span data-i18n="tk3">Заказ за минуту</span><span data-i18n="tk4">Доставка по Узбекистану</span></div></div>
 
   <section class="catalog" id="catalog">
     <div class="wrap">
       <div class="section-head">
-        <div><h2>Каталог</h2><p class="muted">Листайте ряды вправо или нажмите на вещь, чтобы открыть её на весь экран.</p></div>
-        <label class="search"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg><input id="search" type="search" placeholder="Найти вещь" autocomplete="off" aria-label="Поиск по каталогу"></label>
+        <div><h2 data-i18n="cat_title">Каталог</h2><p class="muted" data-i18n="cat_hint">Листайте ряды вправо или нажмите на вещь, чтобы открыть её на весь экран.</p></div>
+        <div class="tools"><label class="search"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg><input id="search" type="search" data-i18n-ph="search_ph" placeholder="Найти вещь" autocomplete="off" data-i18n-aria="search_aria" aria-label="Поиск по каталогу"></label>
+        <button class="chip fbtn" id="fToggle" type="button" aria-expanded="false" aria-controls="fPanel"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg><span data-i18n="filters">Фильтры</span><b id="fCount" hidden></b></button></div>
       </div>
+      <div class="fpanel" id="fPanel"><div class="fpanel-in" id="fPanelIn"></div></div>
       <div class="chips" id="chips" role="tablist" aria-label="Каталоги"></div>
     </div>
     <div id="rows"></div>
-    <p class="empty wrap" id="noResults" hidden>Ничего не нашли. Попробуйте другое слово или сбросьте фильтр.</p>
+    <p class="empty wrap" id="noResults" hidden data-i18n="no_results">Ничего не нашли. Попробуйте другое слово или сбросьте фильтр.</p>
   </section>
 
   <section class="about" id="about">
@@ -91,17 +104,22 @@
       <div>
         <p class="lead" data-s="aboutText"></p>
         <ul class="facts">
-          <li><strong>Плотные ткани</strong><span>Хлопок, шерсть, лён и кожа без лишних добавок.</span></li>
-          <li><strong>Точная посадка</strong><span>Размеры указаны на каждой вещи, выбирайте перед заказом.</span></li>
-          <li><strong>Простой заказ</strong><span>Оставьте имя и телефон, мы свяжемся и подтвердим.</span></li>
+          <li><strong data-i18n="f1t">Плотные ткани</strong><span data-i18n="f1d">Хлопок, шерсть, лён и кожа без лишних добавок.</span></li>
+          <li><strong data-i18n="f2t">Точная посадка</strong><span data-i18n="f2d">Размеры указаны на каждой вещи, выбирайте перед заказом.</span></li>
+          <li><strong data-i18n="f3t">Простой заказ</strong><span data-i18n="f3d">Оставьте имя и телефон, мы свяжемся и подтвердим.</span></li>
         </ul>
       </div>
     </div>
   </section>
 
+  <section class="reviews" id="reviews" hidden>
+    <div class="wrap"><div class="section-head"><div><h2 data-i18n="reviews_title">Отзывы покупателей</h2><p class="muted" data-i18n="reviews_sub">Живые отзывы тех, кто уже носит VELMONT.</p></div></div></div>
+    <div class="rev-rail" id="revRail"></div>
+  </section>
+
   <section class="contact" id="contact">
     <div class="wrap contact-box glass">
-      <div><h2>Связаться с нами</h2><p class="lead" data-s="contactText"></p></div>
+      <div><h2 data-i18n="contact_title">Связаться с нами</h2><p class="lead" data-s="contactText"></p></div>
       <div class="contact-links" id="contactLinks"></div>
     </div>
   </section>
@@ -109,7 +127,7 @@
 
 <footer class="footer">
   <a class="logo" href="#home"><span class="logo-mark" aria-hidden="true"></span>VELMONT</a>
-  <p data-s="footerText"></p>
+  <p data-s="footerText" data-i18n="footer_tag"></p>
   <small>© 2026 VELMONT</small>
 </footer>
 
@@ -123,62 +141,75 @@
 <div class="overlay" id="overlay"></div>
 <aside class="drawer" id="drawer" aria-hidden="true" role="dialog" aria-label="Корзина">
   <div class="drawer-head">
-    <h2>Корзина <small id="cartN">0</small></h2>
-    <button class="icon-btn" id="closeCart" aria-label="Закрыть корзину">✕</button>
+    <h2><span data-i18n="cart_title">Корзина</span> <small id="cartN">0</small></h2>
+    <button class="icon-btn" id="closeCart" data-i18n-aria="cart_close" aria-label="Закрыть корзину">✕</button>
   </div>
   <div class="drawer-view" id="viewCart">
     <div class="cart-list" id="cartList"></div>
     <div class="cart-empty" id="cartEmpty">
       <svg viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22h40l-3.6 32a4 4 0 0 1-4 3.5H19.6a4 4 0 0 1-4-3.5L12 22Z"/><path d="M23 22v-4a9 9 0 0 1 18 0v4"/></svg>
-      <h3>В корзине пока пусто</h3>
-      <p>Выберите вещь в каталоге и нажмите «В корзину».</p>
-      <button class="btn btn-ghost" id="continueShopping">В каталог</button>
+      <h3 data-i18n="cart_empty_t">В корзине пока пусто</h3>
+      <p data-i18n="cart_empty_p">Выберите вещь в каталоге и нажмите «В корзину».</p>
+      <button class="btn btn-ghost" id="continueShopping" data-i18n="to_catalog">В каталог</button>
     </div>
     <div class="drawer-foot" id="cartFoot">
-      <div class="total"><span>Итого</span><strong id="cartTotal">0 сум</strong></div>
-      <button class="btn btn-primary btn-block btn-shine" id="toCheckout"><span>Оформить заказ</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <div class="total"><span data-i18n="total">Итого</span><strong id="cartTotal">0 сум</strong></div>
+      <button class="btn btn-primary btn-block btn-shine" id="toCheckout"><span data-i18n="checkout">Оформить заказ</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
     </div>
   </div>
   <form class="drawer-view" id="viewCheckout" hidden novalidate>
-    <button type="button" class="back" id="backToCart">← Назад в корзину</button>
-    <h3>Куда и кому отправить</h3>
-    <label class="field"><span>Ваше имя</span><input name="name" autocomplete="name" maxlength="80" required></label>
-    <div class="field" id="phoneBox"><span>Телефон</span>
-      <div class="inline"><input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+998 90 123 45 67" maxlength="30" required><button type="button" class="btn btn-primary small" id="tgVerify" hidden>Подтвердить через Telegram</button></div>
+    <button type="button" class="back" id="backToCart" data-i18n="back_cart">← Назад в корзину</button>
+    <h3 data-i18n="ck_title">Куда и кому отправить</h3>
+    <label class="field"><span data-i18n="ck_name">Ваше имя</span><input name="name" autocomplete="name" maxlength="80" required></label>
+    <div class="field" id="phoneBox"><span data-i18n="ck_phone">Телефон</span>
+      <div class="inline"><input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+998 90 123 45 67" maxlength="30" required><button type="button" class="btn btn-primary small" id="tgVerify" hidden data-i18n="tg_verify">Подтвердить через Telegram</button></div>
       <small class="hint" id="tgHint"></small>
     </div>
-    <div class="field" id="addrBox"><span>Адрес доставки</span>
-      <button type="button" class="map-btn" id="pickMap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span id="pickMapText">Выбрать адрес на карте</span></button>
-      <input name="address2" autocomplete="off" maxlength="120" placeholder="Подъезд, этаж, квартира, ориентир" hidden>
+    <div class="field" id="addrBox"><span data-i18n="ck_addr">Адрес доставки</span>
+      <button type="button" class="map-btn" id="pickMap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span id="pickMapText" data-i18n="pick_map">Выбрать адрес на карте</span></button>
+      <input name="address2" autocomplete="off" maxlength="120" data-i18n-ph="addr2_ph" placeholder="Подъезд, этаж, квартира, ориентир" hidden>
     </div>
-    <label class="field"><span>Комментарий</span><textarea name="comment" rows="2" maxlength="500" placeholder="Удобное время звонка, пожелания"></textarea></label>
+    <label class="field"><span data-i18n="comment">Комментарий</span><textarea name="comment" rows="2" maxlength="500" data-i18n-ph="comment_ph" placeholder="Удобное время звонка, пожелания"></textarea></label>
+    <div class="field" id="promoBox"><span data-i18n="promo_lbl">Промокод</span>
+      <div class="inline"><input name="promo" autocomplete="off" autocapitalize="characters" maxlength="24" data-i18n-ph="promo_ph" placeholder="Введите промокод"><button type="button" class="btn btn-ghost small" id="promoBtn" data-i18n="promo_apply">Применить</button></div>
+      <small class="hint" id="promoHint"></small>
+    </div>
+    <div class="field" id="payBox" hidden><span data-i18n="pay_method">Способ оплаты</span><div class="pay-opts" id="payOpts" role="radiogroup"></div></div>
     <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
     <p class="form-error" id="orderError" role="alert" hidden></p>
     <div class="drawer-foot">
-      <div class="total"><span>К оплате</span><strong id="checkoutTotal">0 сум</strong></div>
+      <div class="total sub" id="ckSub" hidden><span data-i18n="subtotal">Товары</span><b id="ckSubV"></b></div>
+      <div class="total sub disc" id="ckDisc" hidden><span data-i18n="discount">Скидка</span><b id="ckDiscV"></b></div>
+      <div class="total"><span data-i18n="to_pay">К оплате</span><strong id="checkoutTotal">0 сум</strong></div>
       <button class="btn btn-primary btn-block btn-order" id="sendOrder" type="submit">
-        <span class="bo-label">Отправить заказ</span>
+        <span class="bo-label" data-i18n="send_order">Отправить заказ</span>
         <span class="bo-cart" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h3l2.4 11.2a1.6 1.6 0 0 0 1.6 1.3h8.2a1.6 1.6 0 0 0 1.6-1.2L21 8H6"/><circle cx="10" cy="20" r="1.3"/><circle cx="17" cy="20" r="1.3"/></svg></span>
-        <span class="bo-ok" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Заказ принят</span>
+        <span class="bo-ok" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="order_ok">Заказ принят</span></span>
         <span class="bo-bar" aria-hidden="true"></span>
       </button>
-      <p class="fine">Менеджер свяжется с вами для подтверждения. Оплата при получении.</p>
+      <p class="fine" id="fineText" data-i18n="fine_cod">Менеджер свяжется с вами для подтверждения. Оплата при получении.</p>
     </div>
   </form>
   <div class="drawer-view" id="viewTrack" hidden>
-    <button type="button" class="back" id="backFromTrack">← К корзине</button>
-    <h3>Мои заказы</h3>
-    <p class="fine">Статус обновляется автоматически.</p>
+    <button type="button" class="back" id="backFromTrack" data-i18n="back_to_cart">← К корзине</button>
+    <h3 data-i18n="my_orders">Мои заказы</h3>
+    <p class="fine" data-i18n="auto_upd">Статус обновляется автоматически.</p>
     <div id="trackList"></div>
+    <div class="find-orders" id="findOrders" hidden>
+      <p class="fine" data-i18n="find_hint">Не видите свой заказ? Заказы сохраняются только в этом браузере. Найдите их по номеру телефона.</p>
+      <button type="button" class="btn btn-ghost" id="findByPhone" data-i18n="find_btn">Найти заказы по номеру через Telegram</button>
+      <small class="hint" id="findHint"></small>
+    </div>
   </div>
   <div class="drawer-view done" id="viewDone" hidden>
     <canvas class="confetti" id="confetti" aria-hidden="true"></canvas>
     <svg class="check" viewBox="0 0 80 80" width="96" height="96" aria-hidden="true"><circle cx="40" cy="40" r="34"/><path d="M26 41l10 10 19-21"/></svg>
-    <h3 id="doneTitle">Поздравляем с заказом! 🎉</h3>
+    <h3 id="doneTitle" data-i18n="done_title">Поздравляем с заказом! 🎉</h3>
     <p id="doneText">Мы получили заказ и скоро свяжемся с вами.</p>
+    <a class="btn btn-primary btn-shine" id="donePay" href="#" hidden></a>
     <a class="btn btn-tg" id="doneTg" href="#" target="_blank" rel="noopener" hidden>Отправить заказ в Telegram</a>
-    <button class="btn btn-ghost" id="doneTrack">Следить за статусом заказа</button>
-    <button class="btn btn-primary" id="doneClose">Продолжить покупки</button>
+    <button class="btn btn-ghost" id="doneTrack" data-i18n="done_track">Следить за статусом заказа</button>
+    <button class="btn btn-primary" id="doneClose" data-i18n="done_continue">Продолжить покупки</button>
   </div>
 </aside>
 

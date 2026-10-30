@@ -19,3 +19,18 @@ services:
         sync: false
       - key: SUPABASE_SERVICE_KEY
         sync: false
+      - key: SITE_URL
+        value: https://velmontstyle.uz
+      - key: BACKUP_CHAT_ID
+        sync: false
+      # Онлайн-оплата (необязательно, заполните то, что подключили)
+      - key: PAYME_MERCHANT_ID
+        sync: false
+      - key: PAYME_KEY
+        sync: false
+      - key: CLICK_SERVICE_ID
+        sync: false
+      - key: CLICK_MERCHANT_ID
+        sync: false
+      - key: CLICK_SECRET_KEY
+        sync: false

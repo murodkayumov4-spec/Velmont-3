@@ -2,19 +2,23 @@
   "categories": [
     {
       "id": "outerwear",
-      "name": "Верхняя одежда"
+      "name": "Верхняя одежда",
+      "nameUz": "Ustki kiyim"
     },
     {
       "id": "tops",
-      "name": "Футболки и поло"
+      "name": "Футболки и поло",
+      "nameUz": "Futbolka va polo"
     },
     {
       "id": "trousers",
-      "name": "Брюки"
+      "name": "Брюки",
+      "nameUz": "Shimlar"
     },
     {
       "id": "shoes",
-      "name": "Обувь"
+      "name": "Обувь",
+      "nameUz": "Poyabzal"
     }
   ],
   "products": [

@@ -1,11 +1,14 @@
 {
   "name": "velmont-store",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "VELMONT — магазин одежды с админ-панелью и заказами в Telegram",
   "private": true,
   "scripts": {
     "start": "node server.js",
-    "chatid": "node scripts/chat-id.js"
+    "chatid": "node scripts/chat-id.js",
+    "genpass": "node scripts/genpass.js"
   },
-  "engines": { "node": ">=18" }
+  "engines": {
+    "node": ">=18"
+  }
 }
